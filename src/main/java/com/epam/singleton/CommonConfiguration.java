@@ -1,6 +1,7 @@
 package com.epam.singleton;
 
 import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -22,20 +23,20 @@ public class CommonConfiguration {
             FileInputStream fis = new FileInputStream(
                     new File("properties.txt"));
             props.load(fis);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             org.apache.log4j.BasicConfigurator.configure();
             logger.error("file not loaded", e);
         }
     }
 
-    public static synchronized  CommonConfiguration getInstance() {
-        if (config == null)
+    public static CommonConfiguration getInstance() {
+        if (config == null) {
             config = new CommonConfiguration();
+        }
         return config;
     }
 
-    public synchronized String getProperty(String key) {
+    public String getProperty(String key) {
         String value = null;
         if (props.containsKey(key))
             value = (String) props.get(key);
@@ -46,8 +47,8 @@ public class CommonConfiguration {
         return value;
     }
 
-    public synchronized void setProperty(String key, String value){
-        props.setProperty(key,value);
+    public void setProperty(String key, String value) {
+        props.setProperty(key, value);
     }
 
 }

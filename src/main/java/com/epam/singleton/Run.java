@@ -7,10 +7,14 @@ public class Run {
     private Run() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         CommonConfiguration.getInstance().setProperty("test", "testPropertyValue");
         System.out.println(CommonConfiguration.getInstance().getProperty("test"));
+        TestInAnotherTread testInAnotherTread = new TestInAnotherTread();
+        testInAnotherTread.run();
+        testInAnotherTread.join();
+        System.out.println(CommonConfiguration.getInstance().getProperty("test1"));
 
 
     }

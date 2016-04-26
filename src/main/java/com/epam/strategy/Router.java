@@ -6,15 +6,15 @@ package com.epam.strategy;
 public class Router {
     private RoutingProcess routingProcess;
 
-    public Router(RoutingProcess routingProcess){
+    public Router(RoutingProcess routingProcess) {
         this.routingProcess = routingProcess;
     }
 
-    public void setRoutingProcess(RoutingProcess routingProcess){
+    public void setRoutingProcess(RoutingProcess routingProcess) {
         this.routingProcess = routingProcess;
     }
 
-    public void route(){
+    public void route() {
         routingProcess.route();
     }
 }

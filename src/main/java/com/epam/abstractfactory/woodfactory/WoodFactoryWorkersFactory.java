@@ -8,19 +8,19 @@ import com.epam.abstractfactory.abstractions.Workman;
 /**
  * Created by o.gondar on 26.04.2016.
  */
-public class FoodFactoryWorkersFactory extends WorkersFactory {
+public class WoodFactoryWorkersFactory extends WorkersFactory {
     @Override
     public Workman crateWorkman() {
-        return new FoodFactoryWorkman();
+        return new WoodFactoryWorkman();
     }
 
     @Override
     public Engineer createEngineer() {
-        return new FoodFactoryEngineer();
+        return new WoodFactoryEngineer();
     }
 
     @Override
     public Manager createManager() {
-        return new FoodFactoryManager();
+        return new WoodFactoryManager();
     }
 }

@@ -5,8 +5,8 @@ import com.epam.abstractfactory.abstractions.Workman;
 /**
  * Created by o.gondar on 26.04.2016.
  */
-public class FoodFactoryWorkman implements Workman {
+public class WoodFactoryWorkman implements Workman {
     public void work() {
-        System.out.println("FoodFactoryWorkman is working!");
+        System.out.println("WoodFactoryWorkman is working!");
     }
 }
